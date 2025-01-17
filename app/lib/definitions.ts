@@ -92,8 +92,8 @@ export type Posts = {
   title: string;
   description: string;
   url: string;
-  urlToImage: string;
-  publishedAt: string;
-  publishedBy: string;
+  url_to_image: string;
+  published_at: string;
+  customer_id: string;
   content: string;
 };

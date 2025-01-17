@@ -1,4 +1,5 @@
-import { fetchFilteredPosts } from "@/app/lib/data";
+import { fetchFilteredPosts, fetchPosts } from "@/app/lib/data";
+import { Card } from "./post-card";
 
 export default async function PostsList({
   query,
@@ -8,7 +9,19 @@ export default async function PostsList({
   currentPage: number;
 }) {
   const posts = await fetchFilteredPosts(query, currentPage);
-  console.log(posts);
 
-  return <div>This is post list.</div>;
+  return (
+    <div className="mt-4">
+      {posts.map((post) => (
+        <Card
+          key={post.id}
+          avatar={post.url_to_image}
+          title={post.title}
+          description={post.description}
+          publishedAt={post.published_at}
+          avatarUrl={post.url_to_image}
+        />
+      ))}
+    </div>
+  );
 }

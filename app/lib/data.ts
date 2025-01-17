@@ -142,20 +142,18 @@ export async function fetchFilteredPosts(query: string, currentPage: number) {
   try {
     const posts = await sql<Posts>`
       SELECT
-        posts.publishedBy,
+        posts.id,
         posts.title,
         posts.description,
-        customers.name,
-        customers.email,
-        customers.image_url
+        posts.url,
+        posts.url_to_image,
+        posts.published_at,
+        posts.customer_id
       FROM posts
-      JOIN customers ON posts.publishedBy = customers.id
       WHERE
-        customers.name ILIKE ${`%${query}%`} OR
-        customers.email ILIKE ${`%${query}%`} OR
         posts.title::text ILIKE ${`%${query}%`} OR
         posts.description::text ILIKE ${`%${query}%`}
-      ORDER BY posts.publishedAt DESC
+      ORDER BY posts.published_at DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
@@ -191,7 +189,7 @@ export async function fetchPostsPages(query: string) {
   try {
     const count = await sql`SELECT COUNT(*)
     FROM posts
-    JOIN customers ON posts.publishedBy = customers.id
+    JOIN customers ON posts.customer_id = customers.id
     WHERE
       customers.name ILIKE ${`%${query}%`} OR
       customers.email ILIKE ${`%${query}%`} OR

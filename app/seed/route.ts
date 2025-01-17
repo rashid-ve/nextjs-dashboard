@@ -1,6 +1,12 @@
 import bcrypt from "bcrypt";
 import { db } from "@vercel/postgres";
-import { invoices, customers, revenue, users } from "../lib/placeholder-data";
+import {
+  invoices,
+  customers,
+  revenue,
+  users,
+  posts,
+} from "../lib/placeholder-data";
 
 const client = await db.connect();
 
@@ -53,6 +59,35 @@ async function seedInvoices() {
   );
 
   return insertedInvoices;
+}
+
+async function seedPosts() {
+  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS posts (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      title VARCHAR(255) NOT NULL,
+      description TEXT NOT NULL,
+      content TEXT NOT NULL,
+      url TEXT NOT NULL,
+      url_to_image TEXT NOT NULL,
+      customer_id UUID NOT NULL,
+      published_at DATE NOT NULL
+    );
+  `;
+
+  const insertedPosts = await Promise.all(
+    posts.map(
+      (post) => client.sql`
+        INSERT INTO posts (title, description, content, url, url_to_image, customer_id, published_at)
+        VALUES (${post.title}, ${post.description}, ${post.content}, ${post.url}, ${post.url_to_image}, ${post.customer_id}, ${post.published_at})
+        ON CONFLICT (id) DO NOTHING;
+      `
+    )
+  );
+
+  return insertedPosts;
 }
 
 async function seedCustomers() {
@@ -108,11 +143,14 @@ export async function GET() {
     await seedCustomers();
     await seedInvoices();
     await seedRevenue();
+    await seedPosts();
     await client.sql`COMMIT`;
+    console.log("Db Seeded");
 
     return Response.json({ message: "Database seeded successfully" });
   } catch (error) {
     await client.sql`ROLLBACK`;
+    console.log(error);
     return Response.json({ error }, { status: 500 });
   }
 }
