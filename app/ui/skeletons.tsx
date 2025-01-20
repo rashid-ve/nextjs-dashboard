@@ -29,6 +29,42 @@ export function CardsSkeleton() {
   );
 }
 
+export function PostCardSkeleton() {
+  return (
+    <div
+      className={`${shimmer} relative overflow-hidden rounded-xl p-2 shadow-sm`}
+    >
+      <div className="flex p-4">
+        <div className="rounded-full cursor-pointer rounded-2">
+          <div className="h-7 w-20 rounded-md bg-gray-200" />
+        </div>
+        <div>
+          <div className="h-5 w-5 rounded-md bg-gray-200" />
+          <div className="ml-2 h-6 w-16 rounded-md bg-gray-200 text-sm font-medium" />
+        </div>
+      </div>
+      <div className="flex ml-2 items-center justify-between">
+        <div className="h-7 w-20 rounded-md bg-gray-200" />
+        <div className="flex justify-end gap-3">
+          <div className="h-7 w-20 rounded-md bg-gray-200" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function PostCardsSkeleton() {
+  return (
+    <>
+      <PostCardSkeleton />
+      <PostCardSkeleton />
+      <PostCardSkeleton />
+      <PostCardSkeleton />
+      <PostCardSkeleton />
+    </>
+  );
+}
+
 export function RevenueChartSkeleton() {
   return (
     <div className={`${shimmer} relative w-full overflow-hidden md:col-span-4`}>

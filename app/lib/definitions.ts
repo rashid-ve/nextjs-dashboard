@@ -96,4 +96,5 @@ export type Posts = {
   published_at: string;
   customer_id: string;
   content: string;
+  name: string;
 };

@@ -1,5 +1,6 @@
-import { fetchFilteredPosts, fetchPosts } from "@/app/lib/data";
+import { fetchFilteredPosts } from "@/app/lib/data";
 import { Card } from "./post-card";
+import Link from "next/link";
 
 export default async function PostsList({
   query,
@@ -13,14 +14,17 @@ export default async function PostsList({
   return (
     <div className="mt-4">
       {posts.map((post) => (
-        <Card
-          key={post.id}
-          avatar={post.url_to_image}
-          title={post.title}
-          description={post.description}
-          publishedAt={post.published_at}
-          avatarUrl={post.url_to_image}
-        />
+        <Link key={post.id} href={`/dashboard/blogs/${post.id}`}>
+          <Card
+            key={post.id}
+            id={post.id}
+            avatar={post.url_to_image}
+            title={post.title}
+            description={post.description}
+            publishedAt={post.published_at}
+            publishedBy={post.name}
+          />
+        </Link>
       ))}
     </div>
   );

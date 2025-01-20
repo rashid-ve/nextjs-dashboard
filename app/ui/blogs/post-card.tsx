@@ -1,28 +1,27 @@
-import Image from "next/image";
 import { lusitana } from "../fonts";
 import Avatar from "./avatar";
-import Link from "next/link";
+import { BookmarkPost, DeletePost, UpdatePost } from "./buttons";
 
 export function Card({
+  id,
   title,
   description,
   avatar,
   publishedAt,
-  avatarUrl,
+  publishedBy,
 }: {
+  id: string;
   title: string;
   description: string;
   avatar: string;
   publishedAt: string;
-  avatarUrl: string;
+  publishedBy: string;
 }) {
   return (
     <div className="rounded-xl p-2 shadow-sm">
       <div className="flex p-4">
         <div className="rounded-full cursor-pointer rounded-2">
-          <Link href={avatarUrl} target="_blank">
-            <Avatar src={avatar} size={80} alt="avatar" />
-          </Link>
+          <Avatar src={avatar} size={80} alt="avatar" />
         </div>
         <div>
           <h2 className="ml-2 text-md font-bold">{title}</h2>
@@ -32,9 +31,16 @@ export function Card({
           >
             {description}
           </p>
-          <p className="ml-2">
-            Published at: {new Date(publishedAt).toDateString()}
-          </p>
+        </div>
+      </div>
+      <div className="flex ml-2 items-center justify-between">
+        <p>
+          Published by: {publishedBy} on {new Date(publishedAt).toDateString()}
+        </p>
+        <div className="flex justify-end gap-3">
+          <UpdatePost id={id} />
+          <BookmarkPost id={id} />
+          <DeletePost id={id} />
         </div>
       </div>
     </div>

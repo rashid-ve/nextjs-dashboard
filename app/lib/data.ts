@@ -148,8 +148,10 @@ export async function fetchFilteredPosts(query: string, currentPage: number) {
         posts.url,
         posts.url_to_image,
         posts.published_at,
-        posts.customer_id
+        posts.customer_id,
+        customers.name
       FROM posts
+      JOIN customers ON posts.customer_id = customers.id
       WHERE
         posts.title::text ILIKE ${`%${query}%`} OR
         posts.description::text ILIKE ${`%${query}%`}

@@ -1,4 +1,9 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  PencilIcon,
+  PlusIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export function CreateBlog() {
@@ -10,5 +15,36 @@ export function CreateBlog() {
       <span className="hidden md:block">Write New Blog</span>{" "}
       <PlusIcon className="h-5 md:ml-4" />
     </Link>
+  );
+}
+
+export function UpdatePost({ id }: { id: string }) {
+  return (
+    <Link
+      href={`/dashboard/blogs/${id}/edit`}
+      className="p-2 hover:bg-gray-100"
+    >
+      <PencilIcon className="w-5" />
+    </Link>
+  );
+}
+
+export function BookmarkPost({ id }: { id: string }) {
+  return (
+    <div className="p-2 hover:bg-gray-100">
+      <BookmarkIcon className="w-5" />
+    </div>
+  );
+}
+
+export function DeletePost({ id }: { id: string }) {
+  // const deleteInvoiceWithId = deleteInvoice.bind(null, id);
+  return (
+    // <form action={deleteInvoiceWithId}>
+    <button className="p-2 hover:bg-gray-100">
+      <span className="sr-only">Delete</span>
+      <TrashIcon className="w-5" />
+    </button>
+    // </form>
   );
 }
