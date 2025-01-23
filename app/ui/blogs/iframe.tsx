@@ -1,4 +1,3 @@
-// pages/iframe.js
 export default function IframePage({ url }: { url: any }) {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

@@ -20,9 +20,22 @@ export const generateMetadata = async ({
   return {
     title: `Post ${title}`,
     description: post?.description,
-    metadataBase: new URL(
-      `https://nextjs-dashboard-aiu9fsf7d-rashids-projects-5b4a0554.vercel.app/dashboard/blogs/${id}/${post?.title}`
-    ),
+    openGraph: {
+      title: `Post ${title}`,
+      description: post?.description,
+      url: post?.url,
+      siteName: "Example Blog",
+      images: [
+        {
+          url: "https://picsum.photos/seed/picsum/200/300",
+          width: 200,
+          height: 400,
+          alt: "Blog Post Image",
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
   };
 };
 

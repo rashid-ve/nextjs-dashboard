@@ -196,46 +196,46 @@ const posts = [
     content:
       "LIVE UPDATESDow Set to Open Up as Markets Digest Inflation DataS&amp;P 500 and Nasdaq futures are also rising in premarket trading Thursday with more big banks set to report earnings.Last Updated:Jan… [+142 chars]",
   },
-  {
-    id: 5,
-    title: "Bluesky to Release Its Own Photo and Video Sharing App ‘Flashes’",
-    description:
-      "The app is based on the same open-source AT protocol that underpins Bluesky.\nThe post Bluesky to Release Its Own Photo and Video Sharing App ‘Flashes’ appeared first on MEDIANAMA.",
-    url: "https://www.medianama.com/2025/01/223-bluesky-photo-video-sharing-app-flashes/",
-    url_to_image:
-      "https://www.medianama.com/wp-content/uploads/2021/03/NEW-1280X720-FEATURED-10.png",
-    published_at: "2025-01-16T08:59:20Z",
-    customer_id: customers[2].id,
-    content:
-      "Bluesky, a competitor to X (formerly Twitter), will soon have its own photo and video-sharing application, Flashes. The app, which is yet to be officially released, uses code from their previous iOS/… [+2517 chars]",
-  },
-  {
-    id: 6,
-    title:
-      "Bitwise CIO Matt Hougan Predicts Explosion of Corporate Bitcoin Purchases in ‘Overlooked Megatrend’",
-    description:
-      "Matt Hougan thinks the burgeoning trend of corporate Bitcoin (BTC) purchases is only beginning. In a new analysis, the chief investment officer of the crypto asset management firm Bitwise predicts that hundreds of companies will add BTC to their corporate tre…",
-    url: "https://dailyhodl.com/2025/01/16/bitwise-cio-matt-hougan-predicts-explosion-of-corporate-bitcoin-purchases-in-overlooked-megatrend/",
-    url_to_image:
-      "https://dailyhodl.com/wp-content/uploads/2025/01/Corporate-Bitcoin-Purchases.jpg",
-    published_at: "2025-01-16T08:04:30Z",
-    customer_id: customers[2].id,
-    content:
-      "Matt Hougan thinks the burgeoning trend of corporate Bitcoin (BTC) purchases is only beginning.\r\nIn a new analysis, the chief investment officer of the crypto asset management firm Bitwise predicts t… [+2340 chars]",
-  },
-  {
-    id: 7,
-    title: "Tesla (NASDAQ:TSLA) Trading 1.4% Higher on Analyst Upgrade",
-    description:
-      "Tesla, Inc. (NASDAQ:TSLA – Get Free Report)’s stock price traded up 1.4% on Tuesday after Barclays raised their price target on the stock from $270.00 to $325.00. Barclays currently has an equal weight rating on the stock. Tesla traded as high as $422.64 and …",
-    url: "https://www.etfdailynews.com/2025/01/16/tesla-nasdaqtsla-trading-1-4-higher-on-analyst-upgrade/",
-    url_to_image:
-      "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/tesla-inc-logo-1200x675.png?v=20221020135629&w=240&h=240&zc=2",
-    published_at: "2025-01-16T06:58:56Z",
-    customer_id: customers[2].id,
-    content:
-      "Tesla, Inc. (NASDAQ:TSLA – Get Free Report)’s stock price traded up 1.4% on Tuesday after Barclays raised their price target on the stock from $270.00 to $325.00. Barclays currently has an equal weig… [+5810 chars]",
-  },
+  // {
+  //   id: 5,
+  //   title: "Bluesky to Release Its Own Photo and Video Sharing App ‘Flashes’",
+  //   description:
+  //     "The app is based on the same open-source AT protocol that underpins Bluesky.\nThe post Bluesky to Release Its Own Photo and Video Sharing App ‘Flashes’ appeared first on MEDIANAMA.",
+  //   url: "https://www.medianama.com/2025/01/223-bluesky-photo-video-sharing-app-flashes/",
+  //   url_to_image:
+  //     "https://www.medianama.com/wp-content/uploads/2021/03/NEW-1280X720-FEATURED-10.png",
+  //   published_at: "2025-01-16T08:59:20Z",
+  //   customer_id: customers[2].id,
+  //   content:
+  //     "Bluesky, a competitor to X (formerly Twitter), will soon have its own photo and video-sharing application, Flashes. The app, which is yet to be officially released, uses code from their previous iOS/… [+2517 chars]",
+  // },
+  // {
+  //   id: 6,
+  //   title:
+  //     "Bitwise CIO Matt Hougan Predicts Explosion of Corporate Bitcoin Purchases in ‘Overlooked Megatrend’",
+  //   description:
+  //     "Matt Hougan thinks the burgeoning trend of corporate Bitcoin (BTC) purchases is only beginning. In a new analysis, the chief investment officer of the crypto asset management firm Bitwise predicts that hundreds of companies will add BTC to their corporate tre…",
+  //   url: "https://dailyhodl.com/2025/01/16/bitwise-cio-matt-hougan-predicts-explosion-of-corporate-bitcoin-purchases-in-overlooked-megatrend/",
+  //   url_to_image:
+  //     "https://dailyhodl.com/wp-content/uploads/2025/01/Corporate-Bitcoin-Purchases.jpg",
+  //   published_at: "2025-01-16T08:04:30Z",
+  //   customer_id: customers[2].id,
+  //   content:
+  //     "Matt Hougan thinks the burgeoning trend of corporate Bitcoin (BTC) purchases is only beginning.\r\nIn a new analysis, the chief investment officer of the crypto asset management firm Bitwise predicts t… [+2340 chars]",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Tesla (NASDAQ:TSLA) Trading 1.4% Higher on Analyst Upgrade",
+  //   description:
+  //     "Tesla, Inc. (NASDAQ:TSLA – Get Free Report)’s stock price traded up 1.4% on Tuesday after Barclays raised their price target on the stock from $270.00 to $325.00. Barclays currently has an equal weight rating on the stock. Tesla traded as high as $422.64 and …",
+  //   url: "https://www.etfdailynews.com/2025/01/16/tesla-nasdaqtsla-trading-1-4-higher-on-analyst-upgrade/",
+  //   url_to_image:
+  //     "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/tesla-inc-logo-1200x675.png?v=20221020135629&w=240&h=240&zc=2",
+  //   published_at: "2025-01-16T06:58:56Z",
+  //   customer_id: customers[2].id,
+  //   content:
+  //     "Tesla, Inc. (NASDAQ:TSLA – Get Free Report)’s stock price traded up 1.4% on Tuesday after Barclays raised their price target on the stock from $270.00 to $325.00. Barclays currently has an equal weig… [+5810 chars]",
+  // },
 ];
 
 const revenue = [
