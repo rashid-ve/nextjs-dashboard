@@ -10,6 +10,8 @@ export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
   const id = (await params).id;
+  const posts = await fetchPosts();
+  const post = posts.find((p) => p.id === id);
   const title = await new Promise((resolve) => {
     setTimeout(() => {
       resolve(`id: ${id}`);
@@ -17,6 +19,10 @@ export const generateMetadata = async ({
   });
   return {
     title: `Post ${title}`,
+    description: post?.description,
+    metadataBase: new URL(
+      `https://nextjs-dashboard-aiu9fsf7d-rashids-projects-5b4a0554.vercel.app/dashboard/blogs/${id}/${post?.title}`
+    ),
   };
 };
 

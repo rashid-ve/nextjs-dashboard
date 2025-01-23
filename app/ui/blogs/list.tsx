@@ -13,19 +13,27 @@ export default async function PostsList({
 
   return (
     <div className="mt-4">
-      {posts.map((post) => (
-        <Link key={post.id} href={`/dashboard/blogs/${post.id}`}>
-          <Card
-            key={post.id}
-            id={post.id}
-            avatar={post.url_to_image}
-            title={post.title}
-            description={post.description}
-            publishedAt={post.published_at}
-            publishedBy={post.name}
-          />
-        </Link>
-      ))}
+      {posts.map((post) => {
+        let decodedUrl = decodeURIComponent(
+          `/dashboard/blogs/${post.id}/${post.title}`
+        );
+        decodedUrl = decodedUrl.replace(/[^a-zA-Z0-9\/\s]/g, "");
+        decodedUrl = decodedUrl.replace(/\s+/g, "-");
+        console.log("decode", decodedUrl);
+        return (
+          <Link key={post.id} href={decodedUrl}>
+            <Card
+              key={post.id}
+              id={post.id}
+              avatar={post.url_to_image}
+              title={post.title}
+              description={post.description}
+              publishedAt={post.published_at}
+              publishedBy={post.name}
+            />
+          </Link>
+        );
+      })}
     </div>
   );
 }
