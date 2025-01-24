@@ -145,12 +145,10 @@ export async function GET() {
     await seedRevenue();
     await seedPosts();
     await client.sql`COMMIT`;
-    console.log("Db Seeded");
 
     return Response.json({ message: "Database seeded successfully" });
   } catch (error) {
     await client.sql`ROLLBACK`;
-    console.log(error);
     return Response.json({ error }, { status: 500 });
   }
 }
