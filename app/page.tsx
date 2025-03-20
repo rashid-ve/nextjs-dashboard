@@ -17,7 +17,8 @@ export default function Page() {
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Welcome to Next-Dashboard.</strong>
+            <strong>Welcome to Next-Dashboard </strong>
+            with Vercel Analytics.
           </p>
           <Link
             href="/login"
